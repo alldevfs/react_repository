@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teste com React</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css">
+	<style type="text/css">
+		#like_button_container { ... }
+	</style>
+</head>
+<body>
+
+	<h1>React rapidinho.</h1>
+	<h3>Utilizando o Water.css</h3>
+
+	<div id="like_button_container"></div>
+
+	<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed.</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus felis mauris, fermentum viverra justo non, gravida tincidunt odio. Fusce interdum suscipit nulla, id tristique nulla. In fermentum purus felis, fringilla suscipit massa commodo quis. In hac habitasse platea dictumst. Suspendisse porta ullamcorper ipsum id interdum. Maecenas accumsan lacinia molestie. Praesent faucibus, mauris ac ultrices viverra, magna nunc elementum turpis, vitae facilisis turpis justo sed sem. Ut non dignissim justo. Nunc bibendum enim nec lorem consectetur, tincidunt finibus quam commodo. Nunc odio sapien, fermentum nec enim nec, pharetra ultricies nibh. Curabitur eu nibh id ipsum fermentum consequat a sed elit. Ut rhoncus placerat metus, eu consequat arcu. In sed dui faucibus, imperdiet odio ut, rutrum erat. Suspendisse vestibulum nunc purus, eget mattis tellus efficitur et.
+
+	Donec varius orci quis semper condimentum. Nam posuere maximus elementum. Etiam nec maximus augue. Mauris pellentesque viverra odio ac ornare. Fusce mollis vulputate accumsan. Sed volutpat lacus non dui laoreet, nec sagittis ante pretium. Nullam magna eros, rutrum a nulla vitae, facilisis accumsan est.</p>
+
+	<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed.</h2>
+	<p>Donec sed sagittis lorem, vel tincidunt augue. In hac habitasse platea dictumst. Nullam rhoncus diam quis massa pretium convallis at vel mi. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dui enim, euismod in nunc id, ullamcorper commodo lectus. Nulla lobortis suscipit molestie. Fusce tempor congue posuere. Integer tempus rhoncus mauris et vestibulum. Integer cursus tortor a libero commodo suscipit. Sed a metus nec turpis porta blandit. Mauris leo neque, congue sagittis libero ac, pharetra tempus turpis.
+
+	Integer convallis maximus augue vitae luctus. Duis vitae lorem nunc. Nunc tempor vel orci nec congue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla feugiat orci a odio rhoncus, eget elementum orci tristique. Sed dignissim orci mauris, eget condimentum tortor tempus eget. Aenean ac magna sed nibh aliquam placerat vestibulum sed odio. Aliquam non vehicula risus. Mauris posuere at nisl ut sollicitudin. Vestibulum dapibus iaculis lectus ac ultricies. Etiam a gravida turpis, vel mattis ante. In in condimentum ligula.</p>
+
+	<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed.</h2>
+	<p>Ut a leo sed nisi bibendum faucibus. Sed id gravida mauris. Proin rhoncus arcu non mi iaculis cursus. Sed ac ligula nisl. Aliquam efficitur blandit mauris eget fringilla. Fusce nulla nunc, rutrum pharetra metus a, vestibulum ullamcorper ex. Pellentesque id tempor tellus, nec blandit leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus dui ut erat suscipit bibendum. Nullam et erat lacinia, ornare lacus vitae, ornare eros. Curabitur tincidunt, massa in feugiat aliquet, augue nisi lacinia diam, sed consectetur ex risus a augue.
+
+	Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer auctor aliquet felis, eu porta erat molestie vel. In ultricies sed neque in placerat. Nam tortor enim, dictum et felis eu, tristique condimentum libero. Proin id nisl lectus. Duis sit amet gravida dolor. Praesent ut sem laoreet, porta diam vel, ullamcorper dui.</p>
+	
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+	<script type="text/javascript">
+		const rce = React.createElement;
+		class LikeButton extends React.Component {
+			constructor(props) {
+				super(props)
+
+				this.state = { liked: false }
+
+			}
+
+			render() {
+
+				if (this.state.liked) { return 'Você curtiu isso!'}
+
+					return rce('button', {
+						onClick: () => { this.setState({ liked: true }) }
+					}, 'Curtir')
+			}
+		}
+
+		const domContainer = document.querySelector('#like_button_container')
+		ReactDOM.render(rce(LikeButton), domContainer)
+	</script>
+
+</body>
+</html>
